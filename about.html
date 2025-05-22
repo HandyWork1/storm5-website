@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storm-5 Global</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#151A50',    // Deep Blue
+                        secondary: '#B6782C',  // Gold
+                        tertiary: '#F8BB48',   // Yellow-Gold
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/heroicons@2.1.1/dist/heroicons.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- components/navbar.html -->
+    <div class="relative bg-white shadow">
+        <!-- Logo -->
+        <div class="absolute left-0 top-0 h-24 flex items-center z-30 bg-white px-12">
+            <img src="assets/images/logo.png" alt="Storm-5 Logo" class="h-20 w-auto" />
+        </div>
+
+        <!-- Top Banner -->
+        <div class="bg-primary text-white text-xs sm:text-sm h-8 flex justify-end items-center pr-4 sm:pr-8">
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+                <!-- Contact Info -->
+                <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3">
+                    <div class="flex items-center space-x-1">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg>
+                        <span>+971 3 546 7890 |</span>
+                    </div>
+                    <div class="flex items-center space-x-1">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+                        <span class="hidden sm:inline">info@storm5consultants.com |</span>
+                    </div>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex items-center space-x-3">
+                    <a href="#" target="_blank" aria-label="Instagram" class="text-white hover:text-tertiary transition duration-300">
+                        <svg class="w-4 h-4 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <title>Facebook</title>
+                            <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" target="_blank" aria-label="LinkedIn" class="text-white hover:text-tertiary transition duration-300">
+                        <svg class="w-4 h-4 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <title>Instagram</title>
+                            <path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/>
+                        </svg>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Twitter" class="text-white hover:text-tertiary transition duration-300">
+                        <svg class="w-4 h-4 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <title>X</title>
+                            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="bg-white border-b border-gray-200 z-10 relative">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex justify-center items-center h-16 space-x-8 text-sm font-medium">
+                    <a href="index.html" class="py-2 border-transparent border-b-2 hover:text-secondary hover:border-secondary transition duration-200">
+                        Home
+                    </a>
+
+                    <!-- About Us Dropdown -->
+                    <div class="relative">
+                        <button class="peer flex items-center gap-1 py-2 border-b-2 text-secondary border-secondary hover:text-secondary hover:border-secondary transition duration-200 focus:outline-none">
+                            About Us
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 peer-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-40 bg-primary text-white text-center rounded shadow-lg opacity-0 invisible peer-hover:opacity-100 peer-hover:visible hover:opacity-100 hover:visible transition-all duration-200 z-50">
+                            <a href="about.html" class="block border-b border-white px-4 py-2 hover:bg-secondary transition duration-150">
+                                Who We Are
+                            </a>
+                            <a href="#" class="block border-b border-white px-4 py-2 hover:bg-secondary transition duration-150">
+                                Our Team
+                            </a>
+                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition duration-150">
+                                Testimonials
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Consulting Solutions Dropdown -->
+                    <div class="relative">
+                        <button class="peer flex items-center gap-1 py-2 border-b-2 border-transparent hover:text-secondary hover:border-secondary transition duration-200 focus:outline-none">
+                            Consulting Solutions
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 peer-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-40 bg-primary text-white text-center rounded shadow-lg opacity-0 invisible peer-hover:opacity-100 peer-hover:visible hover:opacity-100 hover:visible transition-all duration-200 z-50">
+                            <a href="#" class="block border-b border-white px-4 py-2 hover:bg-secondary transition duration-150">FAQs</a>
+                            <a href="#" class="block border-b border-white px-4 py-2 hover:bg-secondary transition duration-150">Our Blog</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition duration-150">Media</a>
+                        </div>
+                    </div>
+
+                    <!-- Resources Dropdown -->
+                    <div class="relative">
+                        <button class="peer flex items-center gap-1 py-2 border-b-2 border-transparent hover:text-secondary hover:border-secondary transition duration-200 focus:outline-none">
+                            Resources
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 peer-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-primary text-white rounded shadow-lg opacity-0 invisible peer-hover:opacity-100 peer-hover:visible hover:opacity-100 hover:visible transition-all duration-200 z-50">
+                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition duration-150">Blog</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition duration-150">FAQs</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition duration-150">Media</a>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="py-2 border-b-2 border-transparent hover:text-secondary hover:border-secondary transition duration-200">Contact Us</a>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden min-h-screen sm:min-h-[80vh]">
+        <div class="absolute inset-0 w-full h-full -z-10">
+            <img src="assets/images/hero.jpg" alt="Decorative Background" class="object-cover w-full h-full" />
+            <div class="absolute inset-0 bg-black/70"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 text-left">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-10 transition-all duration-700 ease-out">
+                 Storm-5 Global Business <br/>
+                Management Consultants
+            </h1>
+            <br />
+            <div class="mt-4 flex justify-start">
+                <p class="text-md text-gray-50"> We are a premier advisory firm dedicated to helping businesses navigate challenges, 
+                    optimize <br/>
+                    operations, and achieve long-term success.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission, Vision, Core Values Section -->
+    <section class="bg-white px-4 sm:px-6 lg:px-8 py-20">
+        <div class="max-w-5xl mb-12">
+            <p class="text-sm font-semibold text-secondary flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                </svg>
+                Empowering Businesses
+            </p>
+            <p class="mt-4 max-w-5xl text-justify text-gray-700 text-sm md:text-base">
+                With a team of seasoned professionals, we specialize in providing data-driven strategies, 
+                process optimization, risk management, and business transformation solutions tailored 
+                to your organization’s unique needs. From startups to multinational corporations, 
+                we empower businesses to thrive in competitive markets by delivering expert guidance, actionable insights, 
+                and measurable results.
+            </p>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Mission -->
+            <div class="bg-[#151A50] text-white p-6 rounded shadow-md">
+            <div class="mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+                </svg>  
+
+            </div>
+            <h3 class="text-lg font-bold mb-2">Our Mission</h3>
+            <p class="text-sm">
+                To provide innovative, results-oriented business solutions that enable companies to enhance efficiency, drive profitability, and sustain growth in a rapidly evolving market.
+            </p>
+            </div>
+
+            <!-- Vision -->
+            <div class="bg-gray-100 text-primary p-6 rounded shadow-md">
+            <div class="mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                    <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z" clip-rule="evenodd" />
+                </svg>
+
+            </div>
+            <h3 class="text-lg font-bold mb-2">Our Vision</h3>
+            <p class="text-sm">
+                To be the leading global consulting firm, recognized for delivering strategic excellence.
+            </p>
+            </div>
+
+            <!-- Core Values -->
+            <div class="bg-[#B6782C] text-white p-6 rounded shadow-md">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                    </svg>
+
+                </div>
+            <h3 class="text-lg font-bold mb-2">Our Core Values</h3>
+            <p class="text-sm"><strong>Integrity & Ethics –</strong> We uphold the highest standards of professionalism, honesty, and confidentiality in all our engagements.</p>
+            <p class="text-sm mt-2"><strong>Client-Centric Approach –</strong> Your success is our priority. We tailor every strategy to fit your unique business needs.</p>
+            <p class="text-sm mt-2"><strong>Sustainability & Growth –</strong> We help businesses build long-term strategies that ensure scalability and resilience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="bg-[#151A50] px-4 sm:px-6 lg:px-8 py-20 text-white">
+        <!-- Heading -->
+        <div class="max-w-6xl mx-auto flex items-center mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white whitespace-nowrap">Why Choose Us?</h2>
+            <div class="ml-4 flex-1 h-px bg-secondary"></div>
+        </div>
+
+        <!-- Cards -->
+        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-6 text-sm">
+            <!-- Card 1 -->
+            <div class="hover:bg-[#B6782C] transition duration-300 text-white p-6 rounded-lg border border-t-0 border-secondary">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 9V5.25m-7.5 3.75V5.25M12 15v3.75m0-3.75l-4.5-4.5M12 15l4.5-4.5" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold mb-2">Expert-Led Solutions</h3>
+                <p>Our team consists of seasoned professionals with years of industry experience.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-transparent hover:bg-[#B6782C] transition duration-300 text-white p-6 rounded-lg border border-t-0 border-secondary">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold mb-2">Tailored Strategies</h3>
+                <p>We design customized solutions aligned with your business goals.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-transparent hover:bg-[#B6782C] transition duration-300 text-white p-6 rounded-lg border border-t-0 border-secondary">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Z" />
+                    </svg>
+
+                </div>
+                <h3 class="font-semibold mb-2">Data-Driven Approach</h3>
+                <p>We leverage cutting-edge analytics for informed decision-making.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-transparent hover:bg-[#B6782C] transition duration-300 text-white p-6 rounded-lg border border-t-0 border-secondary">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                    </svg>
+
+                </div>
+                <h3 class="font-semibold mb-2">Global Perspective</h3>
+                <p>Our insights and strategies are shaped by a deep understanding of international markets.</p>
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="mt-12 text-center">
+            <a href="about.html" class="inline-flex items-center px-6 py-3 border-2 border-[#B6782C] text-white rounded-full hover:bg-[#B6782C] transition duration-300">
+            <span class="uppercase text-sm font-bold">Learn More About Us</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5 21 12l-7.5 7.5M3 12h18" />
+            </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Our Services Section  -->
+    <section class="relative bg-gray-100 py-20 overflow-hidden">
+        <!-- Background image with gray overlay -->
+        <div class="absolute inset-0">
+            <img src="assets/images/logo.png" alt="Background pattern" class="w-full h-full object-cover opacity-30" />
+            <div class="absolute inset-0 bg-white/80"></div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold text-black mb-2">Our Services</h2>
+                <div class="w-10 h-1 bg-secondary"></div>
+            </div>
+
+            <!-- Simple slider -->
+            <div class="flex overflow-x-auto gap-6 snap-x snap-mandatory pb-4 scrollbar-hide">
+                <!-- CARD 1 -->
+                <div class="relative min-w-[280px] md:min-w-[320px] snap-start bg-black rounded-xl overflow-hidden border-4 border-white shadow-lg">
+                    <img src="assets/images/hero.jpg" alt="Business Process Optimization" class="w-full h-60 object-cover opacity-80">
+                    <div class="absolute inset-0 bg-black/40 p-6 flex flex-col justify-end">
+                        <h3 class="text-white text-lg font-semibold mb-4">Business Process Optimization</h3>
+                        <div class="w-full md:w-auto">
+                            <a href="#" class="inline-flex items-center justify-center px-4 py-2 border border-[#F8BB48] text-white text-sm rounded-full hover:bg-[#F8BB48] hover:text-black transition w-full md:w-auto">
+                                Explore More →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="relative min-w-[280px] md:min-w-[320px] snap-start bg-black rounded-xl overflow-hidden border-4 border-white shadow-lg">
+                    <img src="assets/images/blog-bg.jpg" alt="Financial Advisory" class="w-full h-60 object-cover opacity-80">
+                    <div class="absolute inset-0 bg-black/40 p-6 flex flex-col justify-end">
+                        <h3 class="text-white text-lg font-semibold mb-4">Financial Advisory & Risk Management</h3>
+                        <div class="w-full md:w-auto">
+                            <a href="#" class="inline-flex items-center justify-center px-4 py-2 border border-[#F8BB48] text-white text-sm rounded-full hover:bg-[#F8BB48] hover:text-black transition w-full md:w-auto">
+                                Explore More →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="relative min-w-[280px] md:min-w-[320px] snap-start bg-black rounded-xl overflow-hidden border-4 border-white shadow-lg">
+                    <img src="assets/images/hero.jpg" alt="Market Research" class="w-full h-60 object-cover opacity-80">
+                    <div class="absolute inset-0 bg-black/40 p-6 flex flex-col justify-end">
+                        <h3 class="text-white text-lg font-semibold mb-4">Market Research & Competitive Analysis</h3>
+                        <div class="w-full md:w-auto">
+                            <a href="#" class="inline-flex items-center justify-center px-4 py-2 border border-[#F8BB48] text-white text-sm rounded-full hover:bg-[#F8BB48] hover:text-black transition w-full md:w-auto">
+                                Explore More →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="relative min-w-[280px] md:min-w-[320px] snap-start bg-black rounded-xl overflow-hidden border-4 border-white shadow-lg">
+                    <img src="assets/images/blog-bg.jpg" alt="IT Consulting" class="w-full h-60 object-cover opacity-80">
+                    <div class="absolute inset-0 bg-black/40 p-6 flex flex-col justify-end">
+                        <h3 class="text-white text-lg font-semibold mb-4">Digital Transformation & IT Consulting</h3>
+                        <div class="w-full md:w-auto">
+                            <a href="#" class="inline-flex items-center justify-center px-4 py-2 border border-[#F8BB48] text-white text-sm rounded-full hover:bg-[#F8BB48] hover:text-black transition w-full md:w-auto">
+                                Explore More →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination Indicator -->
+            <div class="flex justify-end mt-6 space-x-2">
+            <span class="w-8 h-1 bg-secondary block rounded-full"></span>
+            <span class="w-4 h-1 bg-gray-300 block rounded-full"></span>
+            <span class="w-4 h-1 bg-gray-300 block rounded-full"></span>
+            <span class="w-4 h-1 bg-gray-300 block rounded-full"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Leadership Team Section -->
+    <section class="bg-white px-4 sm:px-6 lg:px-8 py-20">
+	    <div class="max-w-6xl mx-auto">
+            <!-- Heading -->
+            <div class="mb-10">
+                <h2 class="text-2xl sm:text-3xl font-bold text-primary">
+                    Our Leadership Team
+                </h2>
+                <div class="w-10 h-1 bg-secondary"></div>
+            </div>
+
+		    <!-- Team Grid -->
+		    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+			    <!-- Profile Card -->
+			    <div class="relative group rounded-lg overflow-hidden shadow-md border-b-4 border-secondary transition-all duration-300 bg-white">
+				    <img src="assets/images/team1.jpg" alt="James Anderson" class="w-full h-72 object-cover" />
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-semibold text-primary">James Anderson</h3>
+                        <p class="text-sm text-gray-500">Founder & CEO</p>
+                    </div>
+
+                    <!-- Slide-up Overlay -->
+                    <div class="absolute inset-0 bg-black/50 px-4 py-6 flex flex-col justify-center text-sm text-gray-800 
+                        transform translate-y-full group-hover:translate-y-0 
+                        transition-transform duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)]">
+                        <div class="px-4">
+                            <h4 class="font-semibold text-white mb-1">Expertise:</h4>
+                            <ul class="mb-3 text-tertiary">
+                                <li>Business Strategy</li>
+                                <li>Growth Consulting</li>
+                                <li>Risk Management</li>
+                            </ul>
+                            <h4 class="font-semibold text-white mb-1">Experience:</h4>
+                            <p class="mb-3 text-tertiary">20+ years in global business consulting</p>
+                            <a href="#" class="inline-flex items-center px-6 py-3 border-2 border-[#B6782C] text-white rounded-full hover:bg-[#B6782C] transition duration-300">
+                                <span class="uppercase text-sm font-bold">Read More</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5 21 12l-7.5 7.5M3 12h18" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Card 2 -->
+			    <div class="relative group rounded-lg overflow-hidden shadow-md border-b-4 border-secondary transition-all duration-300 bg-white">
+				    <img src="assets/images/team2.jpg" alt="Sarah Williams" class="w-full h-72 object-cover" />
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-semibold text-primary">Sarah Williams</h3>
+                        <p class="text-sm text-gray-500">Chief Operating Officer</p>
+                    </div>
+
+                    <!-- Slide-up Overlay -->
+                    <div class="absolute inset-0 bg-black/50 px-4 py-6 flex flex-col justify-center text-sm text-gray-800 
+                        transform translate-y-full group-hover:translate-y-0 
+                        transition-transform duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)]">
+                        <div class="px-4">
+                            <h4 class="font-semibold text-white mb-1">Expertise:</h4>
+                            <ul class="mb-3 text-tertiary">
+                                <li>Business Strategy</li>
+                                <li>Growth Consulting</li>
+                                <li>Risk Management</li>
+                            </ul>
+                            <h4 class="font-semibold text-white mb-1">Experience:</h4>
+                            <p class="mb-3 text-tertiary">12+ years in global business consulting</p>
+                            <a href="#" class="inline-flex items-center px-6 py-3 border-2 border-[#B6782C] text-white rounded-full hover:bg-[#B6782C] transition duration-300">
+                                <span class="uppercase text-sm font-bold">Read More</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5 21 12l-7.5 7.5M3 12h18" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Card 3 -->
+			    <div class="relative group rounded-lg overflow-hidden shadow-md border-b-4 border-secondary transition-all duration-300 bg-white">
+				    <img src="assets/images/team3.jpg" alt="Michael Kimani" class="w-full h-72 object-cover" />
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-semibold text-primary">Michael Kimani</h3>
+                        <p class="text-sm text-gray-500">Director of Strategic <br /> Planning & Business Development</p>
+                    </div>
+
+                    <!-- Slide-up Overlay -->
+                    <div class="absolute inset-0 bg-black/50 px-4 py-6 flex flex-col justify-center text-sm text-gray-800 
+                        transform translate-y-full group-hover:translate-y-0 
+                        transition-transform duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)]">
+                        <div class="px-4">
+                            <h4 class="font-semibold text-white mb-1">Expertise:</h4>
+                            <ul class="mb-3 text-tertiary">
+                                <li>Business Strategy</li>
+                                <li>Growth Consulting</li>
+                                <li>Risk Management</li>
+                            </ul>
+                            <h4 class="font-semibold text-white mb-1">Experience:</h4>
+                            <p class="mb-3 text-tertiary">20+ years in global business consulting</p>
+                            <a href="#" class="inline-flex items-center px-6 py-3 border-2 border-[#B6782C] text-white rounded-full hover:bg-[#B6782C] transition duration-300">
+                                <span class="uppercase text-sm font-bold">Read More</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5 21 12l-7.5 7.5M3 12h18" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section>
+        <div class="bg-gray-200 p-4 sm:px-6 lg:px-8 md:pb-20 md:pt-14">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-12 gap-8">
+                    <!-- Left: Heading -->
+                    <div class="md:col-span-4 flex flex-col">
+                        <h2 class="text-xl text-right font-bold text-primary mt-20">Our Clients Testimonials</h2>
+                        <div class="flex-1 flex gap-4 py-4 items-end justify-end">
+                            <button class="p-3 rounded-full border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                                </svg>
+                            </button>
+                            <button class="p-3 rounded-full border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+    
+                    <!-- Right: Testimonials -->
+                    <div class="md:col-span-8 bg-primary p-8 rounded-lg">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Testimonial 1 -->
+                            <div class="p-6 flex flex-col">
+                                <img src="assets/images/profile1.jpg" alt="John Doe" class="w-20 h-20 rounded-full object-cover mb-4">
+                                <h3 class="font-semibold text-gray-50 text-sm">John Doe</h3>
+                                <p class="text-xs text-gray-50 mb-4">CEO, Global Business Corporation</p>
+                                <div class="w-full h-1 bg-secondary mb-2"></div>
+                                <div class="bg-white rounded-lg p-4">
+                                    <p class="text-gray-700 text-xs italic">"STORM-5 helped us streamline our operations, leading to a 30% increase in efficiency. Their strategic insights were invaluable."</p>
+                                </div>
+                            </div>
+    
+                            <!-- Testimonial 2 -->
+                            <div class="p-6 flex flex-col">
+                                <img src="assets/images/profile2.jpg" alt="Jane Smith" class="w-20 h-20 rounded-full object-cover mb-4">
+                                <h3 class="font-semibold text-gray-50 text-sm">Jane Smith</h3>
+                                <p class="text-xs text-gray-50 mb-4">CFO, Global Business Consultants Ltd</p>
+                                <div class="w-full h-1 bg-secondary mb-2"></div>
+                                <div class="bg-white rounded-lg p-4">
+                                    <p class="text-gray-700 text-xs italic">"The financial advisory team at STORM-5 provided a game-changing strategy that optimized our revenue streams."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 flex space-x-3 justify-center text-white py-4">
+        <!-- Contact Info -->
+        <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-1">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg>
+                <span class="text-xs">+971 3 546 7890 |</span>
+            </div>
+            <div class="flex items-center space-x-1">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+                <span class="text-xs">info@storm5consultants.com |</span>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex items-center space-x-3">
+            <a href="#" target="_blank" aria-label="Instagram" class="text-white hover:text-tertiary transition duration-300">
+                <svg class="w-4 h-4 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <title>Facebook</title>
+                    <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/>
+                </svg>
+            </a>
+            <a href="#" target="_blank" aria-label="LinkedIn" class="text-white hover:text-tertiary transition duration-300">
+                <svg class="w-4 h-4 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <title>Instagram</title>
+                    <path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/>
+                </svg>
+            </a>
+            <a href="#" target="_blank" aria-label="Twitter" class="text-white hover:text-tertiary transition duration-300">
+                <svg class="w-4 h-4 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <title>X</title>
+                    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
