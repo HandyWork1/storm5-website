@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Storm-5 Global</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -34,17 +34,17 @@
         </div>
 
         <!-- Top Banner -->
-        <div class="bg-primary text-white text-sm h-8 flex justify-end items-center pr-8">
-            <div class="flex items-center space-x-6">
+        <div class="bg-primary text-white text-xs sm:text-sm h-8 flex justify-end items-center pr-4 sm:pr-8">
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
                 <!-- Contact Info -->
-                <div class="flex items-center space-x-3">
+                <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3">
                     <div class="flex items-center space-x-1">
                         <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg>
-                        <span>+971 3 546 7890</span>
+                        <span>+971 3 546 7890 |</span>
                     </div>
                     <div class="flex items-center space-x-1">
                         <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
-                        <span class="hidden sm:inline">info@storm5consultants.com</span>
+                        <span class="hidden sm:inline">info@storm5consultants.com |</span>
                     </div>
                 </div>
 
@@ -76,50 +76,75 @@
         <nav class="bg-white border-b border-gray-200 z-10 relative">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="flex justify-center items-center h-16 space-x-8 text-sm font-medium">
-                    <a href="index.html" class="py-2 border-b-2 border-transparent hover:text-secondary hover:border-secondary transition duration-200">Home</a>
+                    <a href="index.html" class="py-2 text-secondary border-secondary border-b-2 hover:text-secondary hover:border-secondary transition duration-200">
+                        Home
+                    </a>
 
-                    <!-- Dropdown Menus -->
-                    <div class="relative group">
-                        <button class="py-2 border-b-2 border-transparent hover:text-secondary hover:border-secondary transition duration-200">About Us</button>
-                        <div class="absolute left-0 mt-2 w-48 bg-primary text-white rounded shadow-lg hidden group-hover:block z-50">
-                            <a href="our-story.html" class="block px-4 py-2 hover:bg-secondary transition">Who We Are</a>
-                            <a href="team.html" class="block px-4 py-2 hover:bg-secondary transition">Our Team</a>
-                            <a href="testimonials.html" class="block px-4 py-2 hover:bg-secondary transition">Testimonials</a>
+                    <!-- About Us Dropdown -->
+                    <div class="relative">
+                        <button class="peer flex items-center gap-1 py-2 border-b-2 border-transparent hover:text-secondary hover:border-secondary transition duration-200 focus:outline-none">
+                            About Us
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 peer-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-40 bg-primary text-white text-center rounded shadow-lg opacity-0 invisible peer-hover:opacity-100 peer-hover:visible hover:opacity-100 hover:visible transition-all duration-200 z-50">
+                            <a href="about.html" class="block border-b border-white px-4 py-2 hover:bg-secondary transition duration-150">
+                                Who We Are
+                            </a>
+                            <a href="#" class="block border-b border-white px-4 py-2 hover:bg-secondary transition duration-150">
+                                Our Team
+                            </a>
+                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition duration-150">
+                                Testimonials
+                            </a>
                         </div>
                     </div>
 
-                    <div class="relative group">
-                        <button class="py-2 border-b-2 border-transparent hover:text-secondary hover:border-secondary transition duration-200">Consulting Solutions</button>
-                        <div class="absolute left-0 mt-2 w-56 bg-primary text-white rounded shadow-lg hidden group-hover:block z-50">
-                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition">Business Process Optimization</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition">Digital Transformation</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition">Risk & Financial Advisory</a>
+                    <!-- Consulting Solutions Dropdown -->
+                    <div class="relative">
+                        <button class="peer flex items-center gap-1 py-2 border-b-2 border-transparent hover:text-secondary hover:border-secondary transition duration-200 focus:outline-none">
+                            Consulting Solutions
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 peer-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-40 bg-primary text-white text-center rounded shadow-lg opacity-0 invisible peer-hover:opacity-100 peer-hover:visible hover:opacity-100 hover:visible transition-all duration-200 z-50">
+                            <a href="#" class="block border-b border-white px-4 py-2 hover:bg-secondary transition duration-150">FAQs</a>
+                            <a href="#" class="block border-b border-white px-4 py-2 hover:bg-secondary transition duration-150">Our Blog</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition duration-150">Media</a>
                         </div>
                     </div>
 
-                    <div class="relative group">
-                        <button class="py-2 border-b-2 border-transparent hover:text-secondary hover:border-secondary transition duration-200">Resources</button>
-                        <div class="absolute left-0 mt-2 w-48 bg-primary text-white rounded shadow-lg hidden group-hover:block z-50">
-                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition">Blog</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition">FAQs</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition">Media</a>
+                    <!-- Resources Dropdown -->
+                    <div class="relative">
+                        <button class="peer flex items-center gap-1 py-2 border-b-2 border-transparent hover:text-secondary hover:border-secondary transition duration-200 focus:outline-none">
+                            Resources
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 peer-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-primary text-white rounded shadow-lg opacity-0 invisible peer-hover:opacity-100 peer-hover:visible hover:opacity-100 hover:visible transition-all duration-200 z-50">
+                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition duration-150">Blog</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition duration-150">FAQs</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-secondary transition duration-150">Media</a>
                         </div>
                     </div>
 
                     <a href="contact.html" class="py-2 border-b-2 border-transparent hover:text-secondary hover:border-secondary transition duration-200">Contact Us</a>
                 </div>
+
             </div>
         </nav>
     </div>
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden">
-        <!-- Background image with overlay -->
+    <section class="relative overflow-hidden min-h-screen sm:min-h-[80vh]">
         <div class="absolute inset-0 w-full h-full -z-10">
             <img src="assets/images/hero.jpg" alt="Decorative Background" class="object-cover w-full h-full" />
-            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/70"></div>
         </div>
-        <div class="max-w-7xl px-4 lg:pl-12 sm:px-6 lg:px-8 pt-24 pb-32 text-left relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 text-left">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-10 transition-all duration-700 ease-out">
                 Empowering Businesses.
             </h1>
@@ -142,11 +167,11 @@
     </section>
 
     <!-- Who We Are Section -->
-    <section class="relative z-10 -mt-28">
-        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 shadow-xl rounded-sm overflow-hidden">
+    <section class="relative z-10 -mt-16 sm:-mt-28 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 shadow-xl">
             <!-- Left: Logo or Image -->
             <div class="bg-white flex items-center justify-center md:col-span-1 p-10">
-                <img src="assets/images/logo.png" alt="Storm-5 Logo" class="h-auto w-full object-contain">
+                <img src="assets/images/logo.png" alt="Storm-5 Logo" class="h-auto w-full object-cover">
             </div>
 
             <!-- Right: Text Section -->
@@ -165,6 +190,411 @@
         </div>
     </section>
 
+    <!-- Why Choose Us Section -->
+    <section class="bg-white px-4 sm:px-6 lg:px-8 py-10">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-5 shadow-xl overflow-hidden">
+            <!-- Left: Image (3/5 width) -->
+            <div class="md:col-span-3 h-full">
+                <img src="assets/images/hero.jpg" alt="Background Image" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Right: Text Section (2/5 width) -->
+            <div class="text-gray-800  ml-6 px-8 py-4 md:p-10 md:col-span-2 flex flex-col">
+                <h2 class="text-xl font-bold mb-10 inline-block border-b-4 border-secondary pb-4 w-max">
+                    Why Choose Us ?
+                </h2>
+                
+                <!-- Features Grid -->
+                <div class="space-y-6 mb-8">
+                    <div>
+                        <h3 class="text-md font-semibold text-secondary mb-2">Expert-Led Solutions</h3>
+                        <p class="text-sm text-gray-800">Our team consists of seasoned professionals with years of industry experience.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-md font-semibold text-secondary mb-2">Tailored Strategies</h3>
+                        <p class="text-sm text-gray-800">We design customized solutions aligned with your business goals.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-md font-semibold text-secondary mb-2">Data-Driven Approach</h3>
+                        <p class="text-sm text-gray-800">We leverage cutting-edge analytics for informed decision-making.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-md font-semibold text-secondary mb-2">Global Perspective</h3>
+                        <p class="text-sm text-gray-800">Our insights and strategies are shaped by a deep understanding of international markets.</p>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <a href="#" class="mx-auto inline-flex items-center px-6 py-3 border-2 border-secondary text-secondary font-semibold rounded-full hover:bg-secondary hover:text-white transition duration-300">
+                    <span>Learn more about us</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="relative bg-primary px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto py-4 md:pt-10 md:pb-32">
+            <div class="mb-16">
+                <h2 class="text-xl font-bold text-white border-b-4 border-secondary pb-4 w-max">Our Consulting Solutions</h2>
+                <p class="mt-4 text-gray-100 max-w-2xl">
+                    We provide expert consulting services designed to elevate business performance.
+                </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-transform hover:-translate-y-1 duration-300">
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Business Process Optimization</h3>
+                    <p class="text-gray-600">Enhance efficiency and streamline operations.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-transform hover:-translate-y-1 duration-300">
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Financial Advisory & Risk Management</h3>
+                    <p class="text-gray-600">Strengthen financial stability and mitigate risks.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-transform hover:-translate-y-1 duration-300">
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Market Research & Competitive Analysis</h3>
+                    <p class="text-gray-600">Gain valuable industry insights and strategic positioning.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-transform hover:-translate-y-1 duration-300">
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Strategic Planning & Business Development</h3>
+                    <p class="text-gray-600">Build growth-focused strategies for long-term success.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-transform hover:-translate-y-1 duration-300">
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Project Management Services</h3>
+                    <p class="text-gray-600">Ensure timely, within-budget project delivery.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-transform hover:-translate-y-1 duration-300">
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Human Resources & Talent Management</h3>
+                    <p class="text-gray-600">Develop a high performing workforce.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-transform hover:-translate-y-1 duration-300">
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Digital Transformation & IT Consulting</h3>
+                    <p class="text-gray-600">Leverage technology for competitive advantage.</p>
+                </div>
+
+                <div class="col-span-2 flex items-center justify-center md:items-end md:justify-center"">
+                    <!-- Button -->
+                    <a href="#" class="mx-auto inline-flex items-center px-6 py-3 border-2 border-secondary text-secondary rounded-full hover:bg-secondary hover:text-white transition duration-300">
+                        <span class="uppercase text-sm font-bold">Explore Our Consulting Solutions</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="relative">
+        <div class="absolute inset-0 bg-gray-200 -z-20"></div>
+        <div class="relative z-20 md:-mt-20 px-4 sm:px-6 lg:px-8 ">
+            <div class="max-w-5xl mx-auto my-8 grid grid-cols-1 md:grid-cols-2 shadow-xl overflow-hidden shadow-xl bg-white bg-opacity-90 backdrop-blur-md">
+                <!-- Left: Image -->
+                <div class="md:col-span-1 h-full relative z-30">
+                    <img src="assets/images/hero.jpg" alt="Background Image" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Right: Text Section -->
+                <div class="text-gray-800 my-6  ml-6 px-8 md:p-10 md:col-span-1 flex flex-col relative z-30">
+                    <h2 class="text-xl font-bold mb-10 inline-block border-b-4 border-secondary pb-4 w-max">
+                        Diverse Industry Experience
+                    </h2>
+                    
+                    <!-- Features Grid -->
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div>
+                                <p class="text-md text-primary mb-2">Financial Services & Banking</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12H3V5.25" />
+                            </svg>
+                            <div>
+                                <p class="text-md text-primary mb-2">Technology & IT Services</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" />
+                            </svg>
+                            <div>
+                                <p class="text-md text-primary mb-2">Manufacturing & Supply Chain</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                            </svg>
+                            <div>
+                                <p class="text-md text-primary mb-2">Retail & E-commerce</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                            </svg>
+                            <div>
+                                <p class="text-md text-primary mb-2">Healthcare & Pharmaceuticals</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                            </svg>
+                            <div>
+                                <p class="text-md text-primary mb-2">Logistics & Transportation</p>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <a href="#" class="mx-auto inline-flex items-center px-6 py-3 border-2 border-secondary text-secondary font-semibold rounded-full hover:bg-secondary hover:text-white transition duration-300">
+                            <span class="uppercase text-sm font-bold">Talk to our experts</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="relative z-50 md:-mt-40">
+        <div class=" px-4 sm:px-6 lg:px-8 md:pb-20 md:pt-48">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-12 gap-8">
+                    <!-- Left: Heading -->
+                    <div class="md:col-span-4 flex flex-col">
+                        <h2 class="text-xl text-right font-bold text-primary mt-20">Our Clients Testimonials</h2>
+                        <div class="flex-1 flex gap-4 py-4 items-end justify-end">
+                            <button class="p-3 rounded-full border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                                </svg>
+                            </button>
+                            <button class="p-3 rounded-full border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
     
+                    <!-- Right: Testimonials -->
+                    <div class="md:col-span-8 bg-primary p-8 rounded-lg">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Testimonial 1 -->
+                            <div class="p-6 flex flex-col">
+                                <img src="assets/images/profile1.jpg" alt="John Doe" class="w-20 h-20 rounded-full object-cover mb-4">
+                                <h3 class="font-semibold text-gray-50 text-sm">John Doe</h3>
+                                <p class="text-xs text-gray-50 mb-4">CEO, Global Business Corporation</p>
+                                <div class="w-full h-1 bg-secondary mb-2"></div>
+                                <div class="bg-white rounded-lg p-4">
+                                    <p class="text-gray-700 text-xs italic">"STORM-5 helped us streamline our operations, leading to a 30% increase in efficiency. Their strategic insights were invaluable."</p>
+                                </div>
+                            </div>
+    
+                            <!-- Testimonial 2 -->
+                            <div class="p-6 flex flex-col">
+                                <img src="assets/images/profile2.jpg" alt="Jane Smith" class="w-20 h-20 rounded-full object-cover mb-4">
+                                <h3 class="font-semibold text-gray-50 text-sm">Jane Smith</h3>
+                                <p class="text-xs text-gray-50 mb-4">CFO, Global Business Consultants Ltd</p>
+                                <div class="w-full h-1 bg-secondary mb-2"></div>
+                                <div class="bg-white rounded-lg p-4">
+                                    <p class="text-gray-700 text-xs italic">"The financial advisory team at STORM-5 provided a game-changing strategy that optimized our revenue streams."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar Section -->
+    <section class="relative z-30 mt-6 md:-mt-16">
+        <div class="text-white px-4 sm:px-6 lg:px-8 py-12">
+            <div class="max-w-5xl bg-primary mx-auto grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-tertiary text-center">
+            
+                <div class="py-4 px-6 animate-fade-up delay-100">
+                    <h3 class="text-3xl font-bold text-tertiary">98%</h3>
+                    <p class="text-sm opacity-80 mt-2">Client Satisfaction</p>
+                </div>
+                
+                <div class="py-4 px-6 animate-fade-up delay-200">
+                    <h3 class="text-3xl font-bold text-tertiary">40%</h3>
+                    <p class="text-sm opacity-80 mt-2">Average Business Growth</p>
+                </div>
+                
+                <div class="py-4 px-6 animate-fade-up delay-300">
+                    <h3 class="text-3xl font-bold text-tertiary">100+</h3>
+                    <p class="text-sm opacity-80 mt-2">Successful Projects </p>
+                </div>
+                
+                <div class="py-4 px-6 animate-fade-up delay-400">
+                    <h3 class="text-3xl font-bold text-tertiary">15+</h3>
+                    <p class="text-sm opacity-80 mt-2">Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="relative md:-mt-24 bg-cover bg-center bg-no-repeat py-32 px-4 sm:px-6 lg:px-8" style="background-image: url('assets/images/blog-bg.jpg')">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/60 z-10"></div>
+
+        <div class="relative z-20 max-w-6xl mx-auto border-2 border-white rounded-lg bg-white/10 backdrop-blur-md px-6 py-12 text-center">
+            <h2 class="text-white text-2xl sm:text-3xl font-bold border-b-4 border-secondary inline-block pb-1 mb-10">
+            Latest From Our Blog
+            </h2>
+
+            <!-- Blog Cards -->
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            
+            <!-- Card 1 -->
+            <div class="border-8 border-white bg-white/20 backdrop-blur-lg rounded-lg p-6 flex flex-col justify-between h-full">
+                <p class="text-white text-sm mb-6">
+                Discover how strategic planning reshaped growth for leading African startups.
+                </p>
+                <a href="#" class="text-sm font-semibold text-tertiary">Read More →</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="border-8 border-white bg-white/20 backdrop-blur-lg rounded-lg p-6 flex flex-col justify-between h-full">
+                <p class="text-white text-sm mb-6">
+                A look at digital transformation projects that turned operations around.
+                </p>
+                <a href="#" class="text-sm font-semibold text-tertiary">Read More →</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="border-8 border-white bg-white/20 backdrop-blur-lg rounded-lg p-6 flex flex-col justify-between h-full">
+                <p class="text-white text-sm mb-6">
+                Our take on 2025 market shifts and how to stay ahead in emerging sectors.
+                </p>
+                <a href="#" class="text-sm font-semibold text-tertiary">Read More →</a>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="bg-white px-4 sm:px-6 lg:px-8 py-20">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 relative overflow-hidden">
+
+            <!-- Background image  -->
+            <div class="absolute inset-0 md:left-0 md:w-1/2 bg-[url('assets/images/logo.png')] bg-left bg-no-repeat bg-contain opacity-10 pointer-events-none z-0"></div>
+
+            <!-- LEFT: Contact Info -->
+            <div class="relative z-10 flex flex-col justify-center px-8 py-12">
+                <h2 class="text-2xl font-bold text-primary mb-4 border-b-4 border-secondary w-max pb-1">Free Consultation</h2>
+                <div class="flex flex-start space-x-2">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                    </svg>
+                    <p class="text-sm text-primary mb-2">Office Address</p>
+                </div>
+
+                <div class="flex flex-start space-x-2">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                    </svg>
+                    <p class="text-sm text-primary mb-2">Phone: +971 3 546 7890</p>
+                </div>
+                <div class="flex flex-start space-x-2">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                    </svg>
+                    <p class="text-sm text-primary">Email: info@storm5consultants.com</p>
+                </div>
+            </div>
+
+            <!-- RIGHT: Contact Form -->
+            <div class="relative z-10 bg-[#F8BB48]/20 rounded-lg p-8 flex flex-col justify-center">
+                <h3 class="text-xl font-bold text-primary mb-6 text-center">Get in touch</h3>
+
+                <form class="space-y-4 w-full max-w-md mx-auto">
+                    <input required type="text" placeholder="Your Name" 
+                    class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-secondary" />
+                    
+                    <input required type="email" placeholder="Your Email" 
+                    class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-secondary" />
+                    
+                    <textarea required placeholder="Your Message" rows="4" 
+                    class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-secondary"></textarea>
+                    
+                    <button type="submit" class="w-full px-6 py-3 bg-tertiary font-bold rounded hover:bg-[#9d611f] transition duration-300">
+                    SUBMIT
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 flex space-x-3 justify-center text-white py-4">
+        <!-- Contact Info -->
+        <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-1">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg>
+                <span class="text-xs">+971 3 546 7890 |</span>
+            </div>
+            <div class="flex items-center space-x-1">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+                <span class="text-xs">info@storm5consultants.com |</span>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex items-center space-x-3">
+            <a href="#" target="_blank" aria-label="Instagram" class="text-white hover:text-tertiary transition duration-300">
+                <svg class="w-4 h-4 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <title>Facebook</title>
+                    <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/>
+                </svg>
+            </a>
+            <a href="#" target="_blank" aria-label="LinkedIn" class="text-white hover:text-tertiary transition duration-300">
+                <svg class="w-4 h-4 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <title>Instagram</title>
+                    <path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/>
+                </svg>
+            </a>
+            <a href="#" target="_blank" aria-label="Twitter" class="text-white hover:text-tertiary transition duration-300">
+                <svg class="w-4 h-4 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <title>X</title>
+                    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
 </body>
 </html>
