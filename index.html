@@ -6,22 +6,7 @@
     <title>Storm-5 Global</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#151A50',    // Deep Blue
-                        secondary: '#B6782C',  // Gold
-                        tertiary: '#F8BB48',   // Yellow-Gold
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="assets/js/scripts.js"></script>
     <script src="https://unpkg.com/heroicons@2.1.1/dist/heroicons.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -29,12 +14,12 @@
     <!-- components/navbar.html -->
     <div class="relative bg-white shadow">
         <!-- Logo -->
-        <div class="absolute left-0 top-0 h-24 flex items-center z-30 bg-white px-12">
+        <div class="absolute left-0 top-0 h-24 flex items-center z-40 bg-white px-12">
             <img src="assets/images/logo.png" alt="Storm-5 Logo" class="h-20 w-auto" />
         </div>
 
         <!-- Top Banner -->
-        <div class="bg-primary text-white text-xs sm:text-sm h-8 flex justify-end items-center pr-4 sm:pr-8">
+        <div class="hidden md:flex justify-end items-center bg-primary text-white text-xs sm:text-sm h-8 pr-4 sm:pr-8">
             <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
                 <!-- Contact Info -->
                 <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3">
@@ -72,10 +57,19 @@
             </div>
         </div>
 
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex justify-end px-6 py-4">
+            <button id="menu-toggle" class="text-primary focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
         <!-- Main Navigation -->
-        <nav class="bg-white border-b border-gray-200 z-10 relative">
+        <nav class="bg-white border-b border-gray-200 z-30 relative">
             <div class="max-w-7xl mx-auto px-4">
-                <div class="flex justify-center items-center h-16 space-x-8 text-sm font-medium">
+                <div class="hidden md:flex justify-center items-center h-16 space-x-8 text-sm font-medium">
                     <a href="index.html" class="py-2 text-secondary border-secondary border-b-2 hover:text-secondary hover:border-secondary transition duration-200">
                         Home
                     </a>
@@ -132,6 +126,77 @@
                     </div>
 
                     <a href="contact.html" class="py-2 border-b-2 border-transparent hover:text-secondary hover:border-secondary transition duration-200">Contact Us</a>
+                </div>
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="fixed inset-0 z-30 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+                    <div
+                        id="mobile-menu-panel"
+                        class="bg-white w-full h-full p-8 flex flex-col items-center justify-center space-y-6 transform translate-x-full transition-transform duration-300"
+                    >
+                        <!-- Close Button -->
+                        <button id="mobile-menu-close" class="absolute top-4 right-4 text-gray-600 hover:text-black transition">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        <!-- Menu Links -->
+                        <a href="index.html" class="block text-secondary text-lg font-medium text-gray-700 hover:text-secondary transition" onclick="closeMobileMenu()">Home</a>
+
+                        <!-- About Dropdown -->
+                        <div class="w-full max-w-xs">
+                            <button
+                                class="w-full flex justify-center items-center text-lg font-medium text-gray-700 hover:text-secondary transition"
+                                onclick="toggleDropdown('aboutDropdown')"
+                            >
+                                <span>About Us</span>
+                                <svg class="w-4 h-4 transform transition-transform" id="arrow-about" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="aboutDropdown" class="hidden flex-col mt-2 pl-4 border-l border-gray-200 text-gray-600 space-y-1">
+                                <a href="about.html" class="block hover:text-secondary transition" onclick="closeMobileMenu()">Who We Are</a>
+                                <a href="#" class="block hover:text-secondary transition" onclick="closeMobileMenu()">Our Team</a>
+                                <a href="#" class="block hover:text-secondary transition" onclick="closeMobileMenu()">Testimonials</a>
+                            </div>
+                        </div>
+                        <!-- Consulting Solutions Dropdown -->
+                        <div class="w-full max-w-xs">
+                            <button
+                                class="w-full flex justify-center items-center text-lg font-medium text-gray-700 hover:text-secondary transition"
+                                onclick="toggleDropdown('consultingDropdown')"
+                            >
+                                <span>Consulting Solutions</span>
+                                <svg class="w-4 h-4 transform transition-transform" id="arrow-consulting" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="consultingDropdown" class="hidden flex-col mt-2 pl-4 border-l border-gray-200 text-gray-600 space-y-1">
+                                <a href="#" class="block hover:text-secondary transition" onclick="closeMobileMenu()">FAQs</a>
+                                <a href="#" class="block hover:text-secondary transition" onclick="closeMobileMenu()">Our Blog</a>
+                                <a href="#" class="block hover:text-secondary transition" onclick="closeMobileMenu()">Media</a>
+                            </div>
+                        </div>
+                        <!-- Resources Dropdown -->
+                        <div class="w-full max-w-xs">
+                            <button
+                                class="w-full flex justify-center items-center text-lg font-medium text-gray-700 hover:text-secondary transition"
+                                onclick="toggleDropdown('resourcesDropdown')"
+                            >
+                                <span>Resources</span>
+                                <svg class="w-4 h-4 transform transition-transform" id="arrow-resources" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="resourcesDropdown" class="hidden flex-col mt-2 pl-4 border-l border-gray-200 text-gray-600 space-y-1">
+                                <a href="#" class="block hover:text-secondary transition" onclick="closeMobileMenu()">Who We Are</a>
+                                <a href="#" class="block hover:text-secondary transition" onclick="closeMobileMenu()">Our Team</a>
+                                <a href="#" class="block hover:text-secondary transition" onclick="closeMobileMenu()">Testimonials</a>
+                            </div>
+                        </div>
+
+                        <a href="contact.html" class="block text-lg font-medium text-gray-700 hover:text-secondary transition" onclick="closeMobileMenu()">Contact Us</a>
+                    </div>
                 </div>
 
             </div>
